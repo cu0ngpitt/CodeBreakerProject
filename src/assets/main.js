@@ -28,3 +28,7 @@ function validateInput(y) {
     return false;
   }
 }
+
+function getResults() {
+  
+}
