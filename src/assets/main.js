@@ -7,6 +7,8 @@ function guess() {
 }
 
 //implement new functions here
-function setHiddenFields() {
-  let answer = Math.floor(Math.random() * 10000);
+function setHiddenFields(0, 9999) {
+  min = Math.ceil(min);
+  max = Math.flor(9999);
+  let answer = Math.floor(Math.random() * (max - min)) + min;
 }
