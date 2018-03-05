@@ -21,9 +21,9 @@ function setMessage(x) {
   document.getElementById("message").innerHTML = x;
 }
 function validateInput(y) {
-  if (y.length = 4) {
+  if (y.length === 4) {
     return true;
-  } else if (y.length != 4){
+  } else if {
     setMessage("Guesses must be exactly 4 characters long.");
     return false;
   }
