@@ -9,4 +9,7 @@ function guess() {
 //implement new functions here
 function setHiddenFields() {
   let answer = Math.floor(Math.random() * 10000);
+  while (answer.length < 4) {
+    return answer.toString();
+  }
 }
