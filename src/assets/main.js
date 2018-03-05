@@ -7,3 +7,6 @@ function guess() {
 }
 
 //implement new functions here
+funtion setHiddenFields() {
+  let answer = Math.floor(Math.random() * 10000);
+}
