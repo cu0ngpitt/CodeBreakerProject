@@ -24,14 +24,14 @@ function setHiddenFields() {
 function setMessage(x) {
   document.getElementById("message").innerHTML = x;
 }
-function validateInput(y) {
-  if (y.length != 4) {
+function validateInput(x) {
+  if (x.length != 4) {
     setMessage("Guesses must be exactly 4 characters long.");
     return false;
   }
   return true;
 }
 
-function getResults() {
-
+function getResults(z) {
+  let
 }
