@@ -42,6 +42,8 @@ function getResults(x) {
   newDiv.innerHTML = '<span class="col-md-6">' + input + '</span><div class="col-md-6">';
   for (i=0; i<=x.length; i++) {
     if (x.charAt[i] === answer.value.charAt[i]) {
+      `<span class="glyphicon glyphicon-ok"></span>`;
+    } else if {
       `<span class="glyphicon glyphicon-transfer"></span>`;
     } else {
       `<span class="glyphicon glyphicon-remove"></span>`;
