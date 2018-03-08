@@ -35,9 +35,16 @@ function validateInput(x) {
 }
 
 function getResults(x) {
-  let input = document.getElementById("user-guess"),
+  let input = document.getElementById("user-guess").value,
       disp = document.getElementById("results"),
       newDiv = document.createElement("div");
       newDiv.class = "row";
   newDiv.innerHTML = '<span class="col-md-6">' + input + '</span><div class="col-md-6">';
+  for (i=0; i<=input.length; i++) {
+    if (input.charAt[i] === answer.value.charAt[i]) {
+      `<span class="glyphicon glyphicon-transfer"></span>`;
+    } else {
+      `<span class="glyphicon glyphicon-remove"></span>`;
+    }
+  }
 }
