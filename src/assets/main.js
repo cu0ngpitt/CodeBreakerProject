@@ -43,7 +43,7 @@ function getResults(x) {
   for (i=0; i<=x.length; i++) {
     if (x.charAt[i] === answer.value.charAt[i]) {
       `<span class="glyphicon glyphicon-ok"></span>`;
-    } else if {
+    } else if (x.charAt[i] === answer.value.charAt[i+1] || x.charAt[i] === answer.value.charAt[i+2] || x.charAt[i] === answer.value.charAt[i+3]){
       `<span class="glyphicon glyphicon-transfer"></span>`;
     } else {
       `<span class="glyphicon glyphicon-remove"></span>`;
