@@ -10,7 +10,7 @@ function guess() {
     } else {
       attempt.value++;
     }
-    if (getResults()) {
+    if (getResults(input)) {
       setMessage("You Win! :)");
     } else if(!getResults() && attempt.value>=10) {
       setMessage("You Lose! :()");
@@ -39,20 +39,17 @@ function validateInput(x) {
   return true;
 }
 
-function getResults(x) {
-  let input = document.getElementById("user-guess").value,
-      disp = document.getElementById("results"),
-      newDiv = document.createElement("div");
-      newDiv.class = "row";
-  newDiv.innerHTML = '<span class="col-md-6">' + input + '</span><div class="col-md-6">';
-  disp.appendChild(newDiv);
-  for (i=0; i<=input.length; i++) {
-    if (input.charAt[i] === answer.value.charAt[i]) {
-      `<span class="glyphicon glyphicon-ok"></span>`;
-    } else if (input.charAt[i] === answer.value.charAt[i+1] || input.charAt[i] === answer.value.charAt[i+2] || input.charAt[i] === answer.value.charAt[i+3]){
-      `<span class="glyphicon glyphicon-transfer"></span>`;
+function getResults(input) {
+  let result = '<div class="row"><span class="col-md-6">' + input + '</span><div class="col-md-6">';
+  for (i=0; i<input.length; i++) {
+    if (input.charAt(i) === answer.value.charAt(i)) {
+      result += `<span class="glyphicon glyphicon-ok"></span>`;
+    } else if (answer.value.indexOf(input.charAt(i)) > -1) {
+      result += `<span class="glyphicon glyphicon-transfer"></span>`;
     } else {
-      `<span class="glyphicon glyphicon-remove"></span>`;
+      result += `<span class="glyphicon glyphicon-remove"></span>`;
     }
   }
+  result += "</div></div>";
+  document.getElementById("results").innerHTML = result;
 }
