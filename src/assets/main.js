@@ -39,14 +39,15 @@ function validateInput(input) {
   return true;
 }
 
-function getResults(input) {
-  let result = '<div class="row"><span class="col-md-6">' + input + '</span><div class="col-md-6">',
+function getResults(y) {
+  let x = document.getElementById("user-guess"),
+      result = '<div class="row"><span class="col-md-6">' + x + '</span><div class="col-md-6">',
       counts = 0;
-  for (i=0; i<input.length; i++) {
-    if (input.charAt(i) === answer.value.charAt(i)) {
+  for (i=0; i<x.length; i++) {
+    if (x.charAt(i) === answer.value.charAt(i)) {
       result += `<span class="glyphicon glyphicon-ok"></span>`;
       counts ++;
-    } else if (answer.value.indexOf(input.charAt(i)) > -1) {
+    } else if (answer.value.indexOf(x.charAt(i)) > -1) {
       result += `<span class="glyphicon glyphicon-transfer"></span>`;
     } else {
       result += `<span class="glyphicon glyphicon-remove"></span>`;
