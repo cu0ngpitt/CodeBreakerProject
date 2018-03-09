@@ -3,13 +3,16 @@ let attempt = document.getElementById('attempt');
 
 function guess() {
     let input = document.getElementById('user-guess');
+
     if (answer.value === "" || attempt.value === "") {
       setHiddenFields();
-    } else if (!validateInput(input.value)) {
-      return false;
-    } else {
-      attempt.value++;
     }
+
+    if (!validateInput(input.value)) {
+      return;
+    }
+    attempt.value++;
+    
     if (getResults(input)) {
       setMessage("You Win! :)");
     } else if(!getResults() && attempt.value>=10) {
@@ -56,7 +59,6 @@ function getResults(input) {
   document.getElementById("results").innerHTML += results;
   if (counts == 4) {
     return true;
-  } else {
-    return false;
   }
+  return false;
 }
