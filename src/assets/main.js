@@ -45,8 +45,7 @@ function getResults(y) {
       counts = 0;
   for (i=0; i<x.length; i++) {
     if (x.charAt(i) === answer.value.charAt(i)) {
-      result += `<span class="glyphicon glyphicon-ok"></span>`;
-      counts ++;
+      result += `<span class="glyphicon glyphicon-ok"></span>`;      
     } else if (answer.value.indexOf(x.charAt(i)) > -1) {
       result += `<span class="glyphicon glyphicon-transfer"></span>`;
     } else {
