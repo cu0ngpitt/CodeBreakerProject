@@ -39,14 +39,14 @@ function validateInput(input) {
   return true;
 }
 
-function getResults(z) {
-  let y = document.getElementById("user-guess").value,
-      result = '<div class="row"><span class="col-md-6">' + y + '</span><div class="col-md-6">',
+function getResults(input) {
+//  let y = document.getElementById("user-guess").value,
+  let result = '<div class="row"><span class="col-md-6">' + input + '</span><div class="col-md-6">',
       counts = 0;
-  for (i=0; i<y.length; i++) {
-    if (y.charAt(i) === answer.value.charAt(i)) {
+  for (i=0; i<input.length; i++) {
+    if (input.charAt(i) == answer.value.charAt(i)) {
       result += `<span class="glyphicon glyphicon-ok"></span>`;
-    } else if (answer.value.indexOf(y.charAt(i)) > -1) {
+    } else if (answer.value.indexOf(input.charAt(i)) > -1) {
       result += `<span class="glyphicon glyphicon-transfer"></span>`;
     } else {
       result += `<span class="glyphicon glyphicon-remove"></span>`;
