@@ -39,21 +39,21 @@ function validateInput(input) {
   return true;
 }
 
-function getResults(y) {
-  let x = document.getElementById("user-guess"),
-      result = '<div class="row"><span class="col-md-6">' + x + '</span><div class="col-md-6">',
+function getResults(z) {
+  let y = document.getElementById("user-guess").value,
+      result = '<div class="row"><span class="col-md-6">' + y + '</span><div class="col-md-6">',
       counts = 0;
-  for (i=0; i<x.length; i++) {
-    if (x.charAt(i) === answer.value.charAt(i)) {
-      result += `<span class="glyphicon glyphicon-ok"></span>`;      
-    } else if (answer.value.indexOf(x.charAt(i)) > -1) {
+  for (i=0; i<y.length; i++) {
+    if (y.charAt(i) === answer.value.charAt(i)) {
+      result += `<span class="glyphicon glyphicon-ok"></span>`;
+    } else if (answer.value.indexOf(y.charAt(i)) > -1) {
       result += `<span class="glyphicon glyphicon-transfer"></span>`;
     } else {
       result += `<span class="glyphicon glyphicon-remove"></span>`;
     }
   }
   result += "</div></div>";
-  document.getElementById("results").innerHTML = result;
+  document.getElementById("results").innerHTML += results;
   if (counts == 4) {
     return true;
   } else {
