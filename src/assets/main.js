@@ -22,7 +22,7 @@ function guess() {
       showAnswer(false);
       showReplay();
     } else {
-      setMessage("You Lose! :(");
+      setMessage("Incorrect, try again.");
     }
     //add functionality to guess function here
 }
@@ -49,8 +49,8 @@ function validateInput(input) {
 }
 
 function getResults(input) {
-  let result = '<div class="row"><span class="col-md-6">' + input + '</span><div class="col-md-6">',
-  for (i=0; i<input.length; i++) {
+  let result = '<div class="row"><span class="col-md-6">' + input + '</span><div class="col-md-6">';
+  for(i=0; i < input.length; i++) {
     if (input.charAt(i) == answer.value.charAt(i)) {
       result += `<span class="glyphicon glyphicon-ok"></span>`;
     } else if (answer.value.indexOf(input.charAt(i)) > -1) {
