@@ -13,11 +13,17 @@ function guess() {
     }
     attempt.value++;
 
-    if (getResults(input)) {
+    if (getResults(input.value)) {
       setMessage("You Win! :)");
-    } else if(!getResults(input) && attempt.value>=10) {
+      showAnswer(true);
+      showReplay();
+    } else if(attempt.value>=10) {
       setMessage("You Lose! :()");
-    };
+      showAnswer(false);
+      showReplay();
+    } else {
+      setMessage("You Lose! :(");
+    }
     //add functionality to guess function here
 }
 
@@ -43,9 +49,7 @@ function validateInput(input) {
 }
 
 function getResults(input) {
-//  let y = document.getElementById("user-guess").value,
   let result = '<div class="row"><span class="col-md-6">' + input + '</span><div class="col-md-6">',
-      counts = 0;
   for (i=0; i<input.length; i++) {
     if (input.charAt(i) == answer.value.charAt(i)) {
       result += `<span class="glyphicon glyphicon-ok"></span>`;
@@ -57,8 +61,24 @@ function getResults(input) {
   }
   result += "</div></div>";
   document.getElementById("results").innerHTML += results;
-  if (counts == 4) {
+
+  if (input == answer.value) {
     return true;
   }
   return false;
+}
+
+function showAnswer(success) {
+  let code = document.getElementById("code");
+  if (success) {
+    code.className += " success";
+  } else {
+    code.className += " failure";
+  }
+  code.innerHTML = answer.value;
+}
+
+function showReplay() {
+  document.getElementById("guessing-div").style.display = "none";
+  document.getElementById("replay-div").style.display = "block";
 }
