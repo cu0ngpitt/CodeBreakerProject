@@ -60,7 +60,7 @@ function getResults(input) {
     }
   }
   result += "</div></div>";
-  document.getElementById("results").innerHTML += results;
+  document.getElementById("results").innerHTML += result;
 
   if (input == answer.value) {
     return true;
