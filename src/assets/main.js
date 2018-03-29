@@ -23,11 +23,9 @@ function guess() {
       showReplay();
     } else {
       setMessage("Incorrect, try again.");
-    }
-    //add functionality to guess function here
+    }    
 }
 
-//implement new functions here
 function setHiddenFields() {
   answer.value = Math.floor(Math.random() * 10000).toString();
   while (answer.value.length < 4) {
